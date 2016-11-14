@@ -2,7 +2,7 @@
 // Copyright © 2016 The developers of stderr. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/stderr/master/COPYRIGHT.
 
 
-struct StandardErrorAnsiLog
+pub struct StandardErrorAnsiLog
 {
 	logLevel: LogLevel,
 	standardErrorSupportsAnAnsiTerminal: bool,
