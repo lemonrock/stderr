@@ -29,7 +29,9 @@ codegen-units = 1
 [dependencies]
 ansi_term = { git = "https://github.com/lemonrock/rust-ansi-term.git", branch = "makeplain" }
 lazy_static = "0.2"
+log = "0.3"
 rust-extra = { git = "https://github.com/lemonrock/rust-extra.git" }
+time = "0.1"
 
 [target.'cfg(unix)'.dependencies]
 libc = "0.2"
