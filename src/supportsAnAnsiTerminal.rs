@@ -33,9 +33,7 @@ pub fn supportsAnAnsiTerminal(fileDescriptor: i32) -> bool
 	
 	match unsafe { ::libc::isatty(fileDescriptor) }
 	{
-		// Technically, we can check errno but there's really no advantage
-		-1 => false,
-		0 =>
+		1 =>
 		{
 			if let Ok(terminal) = var("TERM")
 			{
@@ -73,6 +71,10 @@ pub fn supportsAnAnsiTerminal(fileDescriptor: i32) -> bool
 				false
 			}
 		},
+
+		// Technically, we can check errno but there's really no advantage
+		0 => false,
+		
 		illegal @ _ => panic!("Not a valid result from isatty '{}'", illegal),
 	}
 }
