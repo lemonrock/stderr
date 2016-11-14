@@ -73,6 +73,6 @@ pub fn supportsAnAnsiTerminal(fileDescriptor: i32) -> bool
 				false
 			}
 		},
-		_ => panic!("Not a valid result from isatty"),
+		illegal @ _ => panic!("Not a valid result from isatty '{}'", illegal),
 	}
 }
