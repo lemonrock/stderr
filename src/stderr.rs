@@ -8,6 +8,7 @@ macro_rules! stderr
 	($($arg:tt)*) =>
 	{
 		{
+			use ::std::io::Write;
 			let result = write!(&mut ::std::io::stderr(), $($arg)*);
 			result.expect("Could not write to stderr");
 		}
