@@ -8,7 +8,7 @@ macro_rules! stderrln
 	($($arg:tt)*) =>
 	{
 		{
-			let result = writeln!(&mut io::stderr(), $($arg)*);
+			let result = writeln!(&mut ::std::io::stderr(), $($arg)*);
 			result.expect("Could not write line to stderr");
 		}
 	}
