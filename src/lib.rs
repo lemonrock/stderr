@@ -16,7 +16,7 @@ extern crate time;
 
 use ::ansi_term::Colour;
 use ::ansi_term::Style;
-use ::libc::isatty;
+#[cfg(unix)] use ::libc::isatty;
 use ::log::Log;
 use ::log::LogLevel;
 use ::log::LogMetadata;
