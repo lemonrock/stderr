@@ -29,9 +29,7 @@ pub fn supportsAnAnsiTerminal(fileDescriptor: i32) -> bool
 #[cfg(unix)]
 pub fn supportsAnAnsiTerminal(fileDescriptor: i32) -> bool
 {
-	// check if we are actually connected to a terminal...
-	
-	match unsafe { ::libc::isatty(fileDescriptor) }
+	match unsafe { isatty(fileDescriptor) }
 	{
 		1 =>
 		{

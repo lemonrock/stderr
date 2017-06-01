@@ -15,8 +15,8 @@ exclude = ["*"]
 include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "benches/**/*.rs", "examples/**/*.rs", "tests/**/*.rs", "Cargo.toml", "rustfmt.toml", "clippy.toml"]
 # Relative to Cargo.toml
 readme = "README.md"
-publish = false
-version = "0.0.0"
+publish = true
+version = "0.0.1"
 
 [profile.release]
 opt-level = 3
@@ -27,10 +27,10 @@ debug-assertions = false
 codegen-units = 1
 
 [dependencies]
-ansi_term = { git = "https://github.com/lemonrock/rust-ansi-term.git", branch = "makeplain" }
+ansi_term = "^0.9"
 lazy_static = "0.2"
 log = "0.3"
-rust-extra = { git = "https://github.com/lemonrock/rust-extra.git" }
+rust-extra = "0.0.13"
 time = "0.1"
 
 [target.'cfg(unix)'.dependencies]
